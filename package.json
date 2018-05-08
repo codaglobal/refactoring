@@ -1,34 +1,32 @@
 {
-  "name": "refactoring",
-  "version": "1.0.0",
-  "description": "Refactoring examples and exercises",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha example*/**/**.spec.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/codaglobal/refactoring.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/codaglobal/refactoring/issues"
-  },
-  "homepage": "https://github.com/codaglobal/refactoring#readme",
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.3",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
-    "chai": "^4.1.2",
-    "deep-eql": "^3.0.1",
-    "eslint": "^4.19.1",
-    "eslint-cli": "^1.1.1",
-    "eslint-loader": "^2.0.0",
-    "eslint-plugin-mocha": "^5.0.0",
-    "mocha": "^5.1.1",
-    "mocha-cli": "^1.0.1"
-  }
+    "name": "refactoring",
+    "author": "Coda",
+    "version": "0.0.1",
+    "description": "Refactoring exercises for training or education",
+    "license": "ISC",
+    "main": "build/index.js",
+    "scripts": {
+        "watch": "nodemon --exec 'npm run test'",
+        "test": "mocha --compilers js:babel-core/register src/example*/server/*.js",
+        "build": "babel src --out-dir build",
+        "clean": "rm -rf build",
+        "lint": "eslint src test"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-core": "^6.26.3",
+        "babel-eslint": "^8.2.3",
+        "babel-preset-env": "^1.6.1",
+        "chai": "^4.1.2",
+        "eslint": "^4.19.1",
+        "eslint-cli": "^1.1.1",
+        "eslint-config-airbnb": "^1.0.0",
+        "eslint-plugin-mocha": "^5.0.0",
+        "eslint-plugin-react": "^3.10.0",
+        "isparta": "^4.0.0",
+        "mocha": "^2.3.4",
+        "mocha-cli": "^1.0.1",
+        "nodemon": "^1.17.4"
+    }
 }
