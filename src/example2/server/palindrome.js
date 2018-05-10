@@ -1,4 +1,4 @@
-let isPalindrome = input => {
+const isPalindrome = (input) => {
   let testString;
 
   if (typeof input !== 'string') {
@@ -7,9 +7,9 @@ let isPalindrome = input => {
     testString = input;
   }
 
-  if (testString.length == 0) return false;
+  if (testString.length === 0) return false;
 
-  if (testString == null) return false;
+  if (testString === null) return false;
 
   const len = testString.length;
   const array = testString.split('');

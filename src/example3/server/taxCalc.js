@@ -1,23 +1,25 @@
-
-export const getTax = (price = 0, state) => {
-  let taxRate = 0;
-  let taxAmount = 0;
-
-  if (state === 'NY') {
-    taxRate = 0.07;
-    taxAmount = price * taxRate;
-  } else if (state === 'PA') {
-    taxRate = 0.06;
-    taxAmount = price * taxRate;
-  } else {
-    taxRate = 0;
-    taxAmount = price * taxRate;
+class taxCalc {
+  constructor() {
+    this.rate = 0;
+    this.taxValue = 0;
   }
 
-  return taxAmount;
-};
+  getTotal(money, state) {
+    let myRate;
 
-export const getTotal = (price = 0, tax = 0) => {
-  const total = price + tax;
-  return total;
-};
+    if (state === 'NY') {
+      myRate = 0.07;
+    } else if (state === 'PA') {
+      myRate = 0.06;
+    } else {
+      myRate = 0;
+    }
+
+    this.rate = myRate;
+
+    this.taxValue = money * this.rate;
+
+    return money + this.taxValue;
+  }
+}
+export default taxCalc;
